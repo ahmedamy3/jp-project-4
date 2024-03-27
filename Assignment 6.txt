@@ -1,0 +1,162 @@
+
+
+void main (){
+//Q.1: Create a list of names and print all names using list.
+
+List <String> names=["Ahmed","Imran","Yousuf","Abdullah"];
+print(names);
+
+//Q.2: Create an empty list of type string called days. Use the add method to add names of 7 days and print all days.
+
+List days=[];
+days.add("Saturday");
+days.add("Sunday");
+days.add("Monday");
+days.add("Tuesday");
+days.add("Wednesday");
+days.add("Thursday");
+days.add("Friday");
+print(days);
+
+
+//Q.3: Create a list of Days and remove one by one from the end of list.
+List removeDays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Satuday"];
+removeDays.remove("Sunday");
+print(removeDays);
+removeDays.remove("Monday");
+print(removeDays);
+removeDays.remove("Tuesday");
+print(removeDays);
+removeDays.remove("Wednesday");
+print(removeDays);
+removeDays.remove("Thursday");
+print(removeDays);
+removeDays.remove("Friday");
+print(removeDays);
+removeDays.remove("Satuday");
+print(removeDays);
+
+//Q.4: Create a list of numbers & write a program to get the smallest & greatest number from a list.
+    
+List smallNgreatestNum=[8888,8,9,77,500,502,222,22,414,992,22,414,990,20];
+print(smallNgreatestNum.length-1);
+print(smallNgreatestNum);
+smallNgreatestNum.sort();
+print(smallNgreatestNum[13]);
+print(smallNgreatestNum[0]);
+print(smallNgreatestNum.last);
+print(smallNgreatestNum.first);
+ var a=smallNgreatestNum.removeLast();
+print(a);
+ 
+ //Q.5: Create a map with name, phone keys and store some values to it. Use where to find all keys that have length 4.
+Map phone= {"Nokia":3310,"Htc":"Desire Hd","Samsung":"A52","Realme":"50A Prime","Oppo":"f21",};
+phone.removeWhere((key, value) => (key.length==4));
+print(phone);
+
+//Q.6: Create Map variable name world then inside it create countries Map, Key will be the name country & country value will have another map having capitalCity, currency and language to it. by using any country key print all the value of Capital & Currency.
+Map world= {"countries":{"country":{"capitalCity":"Islamabad","currency":"Rupee","language":"Urdu"}}};
+
+print(world["countries"]["country"]);
+
+//Q.7:
+// Map<String, double> expenses = {
+//   'sun': 3000.0,
+//   'mon': 3000.0,
+//   'tue': 3234.0,
+// };
+
+// Check if "fri" exist in expanses; if exist change it's value to 5000.0 otherwise add 'fri' to expenses and set its value to 5000.0 then print expenses.
+
+Map<String, double> expenses = {
+  'sun': 3000.0,
+  'mon': 3000.0,
+  'tue': 3234.0,
+};
+expenses.putIfAbsent("fri", () => 5000.0);
+print(expenses);
+
+//Q.8: remove all false values from below list by using removeWhere or retainWhere property.
+List<Map> usersEligibility = [
+{'name': 'John', 'eligible': true},
+{'name': 'Alice', 'eligible': false},
+{'name': 'Mike', 'eligible': true},
+{'name': 'Sarah', 'eligible': true},
+{'name': 'Tom', 'eligible': false},
+];
+//usersEligibility.removeWhere((element) => (element['eligible']==false));
+  //print(usersEligibility);
+  usersEligibility.retainWhere((element) => (element['eligible'])==false);
+  print(usersEligibility);
+
+  //Q.9: Given a list of integers, write a dart code that returns the maximum value from the list.
+
+List maxValue=[8888,8,9,77,500,502,222,22,414,992,22,414,990,20];
+ print(maxValue.length-1);
+print(maxValue);
+maxValue.sort();
+print(maxValue[13]);
+print(maxValue.last);
+ var m=maxValue.removeLast();
+print(m);
+
+//Q.10: Write a Dart code that takes in a list of strings and removes any duplicate elements, returning a new list without duplicates. The order of elements in the new list should be the same as in the original list.
+
+List removeDulicates=[55,85,95,25,95,85,65,45,25,];
+print(removeDulicates.toSet().toList());
+
+
+//Q 11: Write a Dart code that takes in a list and an integer n as parameters. The program should print a new list containing the first n elements from the original list.
+
+List firstValue=[8888,8,9,77,500,502,222,22,414,992,22,414,990,20];
+ print(firstValue.length-1);
+print(firstValue);
+//firstValue.sort();
+print(firstValue[0]);
+print(firstValue.first);
+
+//Q.12: Write a Dart code that takes in a list of strings and prints a new list with the elements in reverse order.
+// The original list should remain unchanged.
+List reverseValue=[8888,8,9,77,500,502,222,22,414,992,22,414,990,20];
+print(reverseValue.reversed.toList());
+
+//Q.13: Implement a code that takes in a list of integers and returns a new list containing only the unique elements from the original list. The order of elements in the new list should be the same as in the original list.
+
+
+List uniqueElements=[55,85,95,25,95,85,65,45,25,];
+print(uniqueElements.toSet().toList());
+
+//Q.14: Write a Dart code that takes in a list of integers and prints a new list with the elements sorted in ascending order. The original list should remain unchanged.
+
+List ascendingOrder=[8888,8,9,77,500,502,222,22,414,992,22,414,990,20];
+ //print(firstValue.length-1);
+print(ascendingOrder);
+ascendingOrder.sort();
+
+
+//Q.15: Implement a Dart code that uses the where() method to filter out negative numbers from a list of integers. 
+//The program should take in the original list as a parameter and print a new list containing only the positive numbers.
+
+List negNposiNum=[8888,-8,9,77,500,502,222,-22,414,992,-22,414,990,20];
+
+print(negNposiNum.where((element) => (element<=0)));
+
+//Q.16: Implement a Dart code that uses the where() method to filter out odd numbers from a list of integers. The program should take in the original list as a parameter and print a new list containing only the even numbers.
+
+List posiNum=[8888,-8,9,77,500,502,222,-22,414,992,-22,414,990,20];
+
+print(posiNum.where((element) => (element>=0)));
+
+//Q.17: Given a list of integers, write a Dart code that uses the map() method to create a new list with each
+// value squared. The program should take in the original list as a parameter and print the new list.
+
+List newIntegers = [1,85,65,97,23,74,6,99];
+newIntegers.sort();
+print(newIntegers.map((e) => "squared: $e"));
+newIntegers.map((e) => null);
+
+
+
+
+
+}
